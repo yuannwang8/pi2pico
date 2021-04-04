@@ -28,10 +28,9 @@ Please update the functions if non-symmertrical ranges are chosen.
 
 A 180-degree toy servo motor is used. This servo rotates anticlockwise.
 For reference, the servo pointer is parallel to the motor's
-long edge at 180 degrees and 'up' at 90 degrees.
-
-Unfortunately the servo motor setup is unable to produce a
-0-to-90-to-180 angle sweep reliably so we settled for a a more narrow.
+long edge at 180 degrees and 'up' at 90 degrees. Unfortunately this servo motor
+is unable to produce a 0-to-90-to-180 angle sweep reliably so we settled
+for a smaller range.
 
 '''
 
@@ -43,7 +42,7 @@ high_perc = 0.5
 min_duty = 2200 
 max_duty = 7000 
 
-# degree deflection
+# servo's angles of deflection
 min_degree = 30 
 max_degree = 150
 
@@ -139,7 +138,7 @@ try:
                 sleep(0.0001)    
                 
 except KeyboardInterrupt:
-    '''Return to storage position'''
+    '''Return pointer to storage position'''
     led_pwm.duty_u16(0)
     servo.duty_u16(8100)
     sleep(0.5)
